@@ -1,0 +1,34 @@
+def analyze_file(filename):
+        try:
+            with open(filename,'r') as file:
+                content=file.read()
+                sentences=content.count('.')+content.count('!')+content.count('?')
+                words=len(content.split())
+                char=len(content)
+                
+                print(f"{sentences} {words} {char}")
+        except FileNotFoundError:
+            print(f"This file {filename} doesnt have anything")
+
+file = r"C:\Users\LENOVO\OneDrive\Desktop\example.txt"
+analyze_file(file)     
+
+class Student:
+    def __init__(self,name,usn,branch):
+        self.name=name
+        self.usn=usn
+        self.branch=branch
+def print_by_usn(students,branch):
+    student_branch=[student for student in students if student.branch==branch]
+    for student in student_branch:
+        print(f"student name is : {student.name} , usn is : {student.usn}, branch is {student.branch}")
+n=int(input("enter the number of students"))
+students=[]
+for i in range(n):
+    name=input("enter name")
+    usn=input("enter usn")
+    branch=input("branch ")
+    students.append(Student(name,usn,branch))
+
+brunch=input("enter the branch to be found")
+print_by_usn(students,brunch)
