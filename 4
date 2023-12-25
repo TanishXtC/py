@@ -1,0 +1,19 @@
+def div(tup_list,k):
+    result=[tpl for tpl in tup_list if all(element%k==0 for element in tpl)]
+    return result
+tup_list=[(6,24,12),(60,12,6),(12,18,21)]
+k=6
+print(f"tup list is :{div(tup_list,k)}")
+
+def filter(tup_list):
+    result=[tpl for tpl in tup_list if all(isinstance(element,str) and element.isupper() for element in tpl)]
+    return result
+tup_list=[("GFG","IS","BEST"),("GFg","AVERAGE"),("GfG"),("Gfg","CS")]
+print(f"{filter(tup_list)}")
+
+def cnttup(input_tuple,input_list):
+    result={item: input_tuple.count(item) for item in input_list}
+    return result
+input_tuple=('a','a','c','b','d')
+input_list=['a','b']
+print(f"{cnttup(input_tuple,input_list)}")
