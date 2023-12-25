@@ -1,0 +1,39 @@
+def divisibility(num,x,y):
+    result=[n for n in num if n%x==0 and n%y!=0]
+    print(f"result is {result}")
+
+num=[10,15,20,25,30,35,36,40,16,24]
+x=4
+y=5
+divisibility(num,x,y)
+
+def sumoe(num):
+    sum_e=sum(n for n in num if n%2==0)
+    sum_o=sum(n for n in num if n%2!=0)
+    return sum_e,sum_o
+    
+num=[23,10,15,14,63]
+
+sume,sumo=sumoe(num)
+print(f"even sum is : {sume} and odd sum is : {sumo}")
+
+def odd(num):
+    result=[num[i] for i in range(len(num)) if i%2!=0]
+    print(f"{result}")
+    
+num=[10,25,30,47,56,84,96]
+odd(num)
+
+def remove_duplicate(num):
+    result=[]
+    for i in num:
+        if i not in result:
+            result.append(i)
+    print(f"{result}")
+    
+def rem_dup(num):
+    res=list(set(num))
+    print(f"{res}")
+num=[10,20,40,10,50,30,20,10,80]
+remove_duplicate(num)
+rem_dup(num)
