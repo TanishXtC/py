@@ -1,0 +1,55 @@
+class Car:
+    def __init__(self,model_name,color,price,top_speed):
+        self.model_name=model_name
+        self.color=color
+        self.price=price
+        self.top_speed=top_speed
+        
+    def display(self):
+        print(f"model name is : {self.model_name}")
+        print(f"color name is : {self.color}")
+        print(f"price name is : {self.price}")
+        print(f"top speed name is : {self.top_speed}")
+
+car1=Car("Maruti","white",20000,120)
+car1.display()
+
+car2=Car(None,None,None,None)
+car2.model_name="Tesla"
+car2.color="whiye"
+car2.price=50000
+car2.top_speed=500000
+car2.display()
+
+class Bank:
+    def __init__(self,bank_name,num_cust):
+        self.bank_name=bank_name
+        self.num_cust=num_cust
+    def display(self):
+        print(f"bank name is : {self.bank_name}")
+        print(f"num_customer is : {self.num_cust}")
+        
+class Govtbank(Bank):
+    def __init__(self,bank_name,num_cust,branch_name,IIFC_code):
+        super().__init__(bank_name,num_cust)
+        self.branch_name=branch_name
+        self.IIFC_code=IIFC_code
+    def display(self):
+        super().display()
+        print(f"branch name is : {self.branch_name}")
+        print(f"IIFC code is : {self.IIFC_code}")
+        
+class Privatebank(Bank):
+    def __init__(self,bank_name,num_cust,branch_name,IIFC_code):
+        super().__init__(bank_name,num_cust)
+        self.branch_name=branch_name
+        self.IIFC_code=IIFC_code
+    def display(self):
+        super().display()
+        print(f"branch name is : {self.branch_name}")
+        print(f"IIFC code is : {self.IIFC_code}")
+        
+jkbank=Govtbank("jkbank",50,"nai basti","JAKA0BASTEE")
+pnb=Privatebank("pnb",100,"shastri nagar","PNBSNS")
+jkbank.display()
+pnb.display()
