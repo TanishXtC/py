@@ -1,0 +1,37 @@
+my_dict=dict()
+
+my_dict['key1']='value1'
+my_dict['key2']='value2'
+my_dict['key3']='value3'
+my_dict['key4']='value4'
+
+print(my_dict)
+
+my_dict['key2']='newval'
+print(my_dict)
+
+print(f"the value at key2 is : {my_dict.get('key2')}")
+print(f"the value at key2 is : {my_dict.get('key1')}")
+
+del my_dict['key1']
+print(my_dict)
+
+dictionary={'a':10,'b':20,'c':30,'d':40}
+print(dictionary)
+
+val=dictionary.pop('b')
+
+print(dictionary)
+
+item,val2=dictionary.popitem()
+print(dictionary)
+dictionary.clear()
+print(dictionary)
+
+dict={'a':10,'b':20,'c':30}
+dict2={'a1':30,'b1':40,'c1':60}
+s=sum(dict.values())
+print(s)
+
+dict.update(dict2)
+print(dict)
