@@ -1,0 +1,51 @@
+def symmetrical_and_pallindrome(s):
+    issymmetrical= s[:len(s)//2]==s[len(s)//2:][::-1]
+    ispallindrome= s==s[::-1]
+    return issymmetrical,ispallindrome
+        
+s=input("Enter a string ")
+symetrical,pallindrome=symmetrical_and_pallindrome(s)
+if symetrical:
+    print(f"the string is symmetrical")
+else:
+  print("not")
+if pallindrome:
+    print("pallindome")
+else:
+  print("not")
+        
+def no_of_vowels(s):
+    vowels="aeiouAEIOU"
+    cnt_vowels=sum(1 for char in s if char in vowels)
+    print(cnt_vowels)
+    letters_es=''.join(char for char in s if char not in['e','s'])
+    print(letters_es)
+    
+s="tanishe"
+no_of_vowels(s)
+
+def removeinit(s):
+    words=s.split(maxsplit=1)
+    if(len(words)>1):
+        result=words[1]
+    else:
+        result=""
+    return result
+        
+s="tanish"
+after=removeinit(s)
+print(after)
+
+
+def cntletters(s):
+    counter={}
+    for char in s:
+        if char.isalpha():
+            lchar=char.lower()
+            counter[lchar]=counter.get(lchar,0)+1
+    return counter
+    
+s=input("ENter the string")
+result=cntletters(s)
+for item,value in result.items():
+    print(f"{item}: {value}")
