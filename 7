@@ -1,0 +1,27 @@
+    def __init__(self,hour=0,minute=0,sec=0):
+        self.hour=hour
+        self.minute=minute
+        self.sec=sec
+    def __add__(self,other):
+        total_sec=self.hour*3600+self.minute*60+self.sec
+        total_sec+=other.hour*3600+other.minute*60+other.sec
+        
+        total_hour, remainder=divmod(total_sec,3600)
+        total_minute,new_sec=divmod(remainder,60)
+        return Time(total_hour,total_minute,new_sec)
+    def __sub__(self,other):
+        total_sec=self.hour*3600+self.minute*60+self.sec
+        total_sec-=other.hour*3600+other.minute*60+other.sec
+        
+        total_hour, remainder=divmod(abs(total_sec),3600)
+        total_minute,new_sec=divmod(remainder,60)
+        return Time(total_hour,total_minute,new_sec)
+    def display(self):
+        print(f"{self.hour:02d}:{self.minute:02d}:{self.sec:02d}")
+
+time1=Time(5,30,45)
+time2=Time(2,15,20)
+add_time=time1+time2
+add_time.display()
+sub_time=time1-time2
+sub_time.display()
