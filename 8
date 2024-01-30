@@ -13,22 +13,21 @@ def analyze_file(filename):
 file = r"C:\Users\LENOVO\OneDrive\Desktop\example.txt"
 analyze_file(file)     
 
-class Student:
-    def __init__(self,name,usn,branch):
-        self.name=name
-        self.usn=usn
-        self.branch=branch
-def print_by_usn(students,branch):
-    student_branch=[student for student in students if student.branch==branch]
-    for student in student_branch:
-        print(f"student name is : {student.name} , usn is : {student.usn}, branch is {student.branch}")
-n=int(input("enter the number of students"))
-students=[]
-for i in range(n):
-    name=input("enter name")
-    usn=input("enter usn")
-    branch=input("branch ")
-    students.append(Student(name,usn,branch))
+student=open("check.txt",'a')
+n=int(input("enter no of students"))
+for i in range(0,n):
+ name=input(f"enter student {i+1} name");
+ rollno=input(f"enter student {i+1} roll no");
+ branch=input(f"enter student {i+1} branch");
+ student.write(name+" "+rollno+" "+branch+"\n")
+student.close()
 
-brunch=input("enter the branch to be found")
-print_by_usn(students,brunch)
+student=open("check.txt",'r')
+content=student.read()
+content=content.split('\n')
+
+branch='ece'
+for i in content[:-1]:
+ std=i.split()
+ if std[2]==branch:
+     print(i)
