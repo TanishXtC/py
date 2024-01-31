@@ -11,7 +11,24 @@ def analyze_file(filename):
             print(f"This file {filename} doesnt have anything")
 
 file = r"C:\Users\LENOVO\OneDrive\Desktop\example.txt"
-analyze_file(file)     
+analyze_file(file)    
+
+
+def copytolower(source,target):
+    try:
+        with open(source,'r') as sr,open(target,'w') as tr:
+            for line in sr:
+                tr.write(line.lower())
+        print(f"content successfully copied from {source} to {target} in lower case")
+        with open(target,'r') as tr:
+            num=sum(1 for line in tr)
+            print(f"Lines copied are : {num}")
+    except FileNotFoundError:
+        print("nahi ha ")
+source=r"E:\1.txt"
+target=r"E:\target.txt"
+copytolower(source,target)
+
 
 student=open("check.txt",'a')
 n=int(input("enter no of students"))
